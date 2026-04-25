@@ -104,7 +104,5 @@ google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
 fpdf
-io
 html2text
-xhtml2text
 google-genai
