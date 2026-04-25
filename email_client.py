@@ -15,10 +15,15 @@ import time
 # ============================================================================
 # SMTP Configuration
 # ============================================================================
-SMTP_HOST = "smtp.gmail.com"
-SMTP_PORT = 587
-SMTP_USER = "samuraidemon513@gmail.com"
-SMTP_PASS = "babwvfnsxbveiszz"  # Gmail app password
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
+SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
+SMTP_USER = os.getenv("SMTP_USER")
+SMTP_PASS = os.getenv("SMTP_PASS")  # Gmail app password
 
 
 # ============================================================================

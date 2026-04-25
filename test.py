@@ -4,10 +4,13 @@ from email.mime.text import MIMEText
 import os
 
 # 1️⃣ SMTP configuration
-SMTP_HOST = "smtp.gmail.com"          # e.g., 'smtp.gmail.com'
+from dotenv import load_dotenv
+load_dotenv()
+
+SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")          # e.g., 'smtp.gmail.com'
 SMTP_PORT = int(os.getenv("SMTP_PORT", 587))# usually 587 for TLS
-SMTP_USER = "samuraidemon513@gmail.com"        # your email
-SMTP_PASS = "babwvfnsxbveiszz"         # your password or app password
+SMTP_USER = os.getenv("SMTP_USER")        # your email
+SMTP_PASS = os.getenv("SMTP_PASS")         # your password or app password
 
 # 2️⃣ Compose the email
 def create_email(to_email, subject, html_content):

@@ -18,7 +18,12 @@ from google.genai import types
 # ============================================================================
 # Configuration
 # ============================================================================
-GEMINI_API_KEY = "AIzaSyAIYOPh53ginGAa3xZFc8W42845VmHdOas"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = "gemini-2.0-flash-exp"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
